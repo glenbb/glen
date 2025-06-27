@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glen Rajadurai Pauldiraviam - Portfolio</title>
+  
+  <style>
+    :root {
+      --primary: #3B82F6;
+      --secondary: #FACC15;
+      --accent: #34D399;
+      --background: #F9FAFB;
+      --text: #111827;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 1rem;
+    }
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+    }
+    header nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    header nav a {
+      color: white;
+      margin: 0.5rem;
+      text-decoration: none;
+    }
+    section {
+      margin-top: 2rem;
+    }
+    h1, h2 {
+      color: var(--primary);
+    }
+    .progress {
+      background-color: #e5e7eb;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+    .progress-bar {
+      height: 20px;
+      line-height: 20px;
+      color: white;
+      padding-left: 10px;
+      width: 0;
+      opacity: 0;
+      transition: width 1.5s ease-in-out, opacity 1s ease-in-out;
+    }
+    .progress-bar.animate {
+      opacity: 1;
+    }
+    .contact i {
+      margin-right: 0.5rem;
+      color: var(--primary);
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: #6b7280;
+    }
+    .download {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    @media (max-width: 768px) {
+      body {
+        padding: 0.5rem;
+      }
+      header nav a {
+        margin: 0.3rem;
+        font-size: 0.9rem;
+      }
+      .download {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Glen Rajadurai Pauldiraviam</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>My name is Glen Rajadurai Pauldiraviam, and I am an aspiring software developer with a foundational skill set in multiple programming and web development technologies. I possess moderate proficiency in Python and a basic working knowledge of Django, which reflect my capability in backend development. Additionally, I have a solid understanding of HTML and CSS, supporting my competency in front-end design. I am keenly interested in pursuing a career in software development, where I aim to continuously enhance my technical abilities and contribute meaningfully to innovative projects.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="progress">
+      <div class="progress-bar" data-skill="40" style="background: var(--primary);">Python (40%)</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" data-skill="25" style="background: var(--secondary);">Django (25%)</div>
+    </div>
+    <div class="progress">
+      <div class="progress-bar" data-skill="50" style="background: var(--accent);">HTML & CSS (50%)</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p class="contact"><i>✉</i> glenrajadurai24@gmail.com</p>
+    <p class="contact"><i>🔗</i> <a href="https://www.linkedin.com/in/glen-rajadurai-pauldiraviam-574a1236a" target="_blank">LinkedIn Profile</a></p>
+  </section>
+
+  <script>
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.progress-bar').forEach(bar => {
+        const value = bar.getAttribute('data-skill');
+        setTimeout(() => {
+          bar.classList.add('animate');
+          bar.style.width = value + '%';
+        }, 300);
+      });
+    });
+  </script>
+
+</body>
+</html>
